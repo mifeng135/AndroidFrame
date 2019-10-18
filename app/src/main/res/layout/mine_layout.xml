@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <com.mifeng.mf.Component.MFDashView
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        app:dashOrientation="vertical"
+        app:dashWidth="2dp"
+        app:lineColor="@android:color/holo_green_light"
+        app:lineHeight="1dp"
+        app:lineWidth="4dp" />
+
+
+    <com.mifeng.mf.Component.MFDashView
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        app:dashOrientation="horizontal"
+        app:dashWidth="2dp"
+        app:lineColor="@android:color/holo_green_light"
+        app:lineHeight="1dp"
+        app:lineWidth="4dp" />
+</LinearLayout>

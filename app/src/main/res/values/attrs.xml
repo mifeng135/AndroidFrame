@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StickNavLayout">
+        <attr name="isStickNav" format="boolean" />
+        <attr name="stickOffset" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="MFTitleBar">
+        <attr name="titleBarColor" format="color" />
+        <attr name="fillStatusBar" format="boolean" />
+        <attr name="statusBarColor" format="color" />
+        <attr name="statusBarMode" format="enum">
+            <enum name="dark" value="0" />
+            <enum name="light" value="1" />
+        </attr>
+        <attr name="titleBarHeight" format="dimension" />
+        <attr name="showBottomLine" format="boolean" />
+        <attr name="bottomLineColor" format="color" />
+        <attr name="bottomShadowHeight" format="dimension" />
+
+        <attr name="leftType">
+            <enum name="none" value="0" />
+            <enum name="textView" value="1" />
+            <enum name="imageButton" value="2" />
+            <enum name="customView" value="3" />
+        </attr>
+        <attr name="leftText" format="string" />
+        <attr name="leftTextColor" format="color" />
+        <attr name="leftTextSize" format="dimension" />
+        <attr name="leftDrawable" format="reference" />
+        <attr name="leftDrawablePadding" format="dimension" />
+        <attr name="leftImageResource" format="reference" />
+        <attr name="leftCustomView" format="reference" />
+
+        <attr name="rightType">
+            <enum name="none" value="0" />
+            <enum name="textView" value="1" />
+            <enum name="imageButton" value="2" />
+            <enum name="customView" value="3" />
+        </attr>
+        <attr name="rightText" format="string" />
+        <attr name="rightTextColor" format="color" />
+        <attr name="rightTextSize" format="dimension" />
+        <attr name="rightImageResource" format="reference" />
+        <attr name="rightCustomView" format="reference" />
+
+        <attr name="centerType">
+            <enum name="none" value="0" />
+            <enum name="textView" value="1" />
+            <enum name="searchView" value="2" />
+            <enum name="customView" value="3" />
+        </attr>
+        <attr name="centerSearchRightType">
+            <enum name="voice" value="0" />
+            <enum name="delete" value="1" />
+        </attr>
+        <attr name="centerText" format="string" />
+        <attr name="centerTextColor" format="color" />
+        <attr name="centerTextSize" format="dimension" />
+        <attr name="centerTextMarquee" format="boolean" />
+        <attr name="centerSubText" format="string" />
+        <attr name="centerSubTextColor" format="color" />
+        <attr name="centerSubTextSize" format="dimension" />
+        <attr name="centerSearchEditable" format="boolean" />
+        <attr name="centerSearchBg" format="reference" />
+        <attr name="centerCustomView" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MFShadowLayout">
+        <!--阴影的圆角大小-->
+        <attr name="hl_cornerRadius" format="dimension" />
+        <!--阴影的扩散范围(也可以理解为扩散程度)-->
+        <attr name="hl_shadowLimit" format="dimension" />
+        <attr name="hl_shadowColor" format="color" />
+        <attr name="hl_shadowBackColor" format="color" />
+        <!--x轴的偏移量-->
+        <attr name="hl_dx" format="dimension" />
+        <!--y轴的偏移量-->
+        <attr name="hl_dy" format="dimension" />
+        <!--左边是否显示阴影-->
+        <attr name="hl_leftShow" format="boolean" />
+        <!--右边是否显示阴影-->
+        <attr name="hl_rightShow" format="boolean" />
+        <!--上边是否显示阴影-->
+        <attr name="hl_topShow" format="boolean" />
+        <!--下面是否显示阴影-->
+        <attr name="hl_bottomShow" format="boolean" />
+
+    </declare-styleable>
+
+    <declare-styleable name="MFDashView">
+        <attr name="dashWidth" format="dimension"/>
+        <attr name="lineWidth" format="dimension"/>
+        <attr name="lineHeight" format="dimension"/>
+        <attr name="lineColor" format="color"/>
+        <attr name="dashOrientation">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/feed_back_title_lable"
+        android:layout_marginHorizontal="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp"
+        android:text="建议和意见"
+        android:textColor="@color/gray"
+        android:textSize="13sp" />
+
+
+    <LinearLayout
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/common_border_drawable_gray_1"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <EditText
+            android:layout_margin="5dp"
+            android:textSize="13sp"
+            android:gravity="start"
+            android:textColor="@color/gray_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="请输入您的意见和建议" />
+    </LinearLayout>
+
+
+
+    <TextView
+        android:layout_marginHorizontal="10dp"
+        android:paddingVertical="20dp"
+        android:textSize="13sp"
+        android:text="图片（选填，提供问题图片）"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/feed_back_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+    <TextView
+        android:gravity="center"
+        android:text="111111111111111111111111111111111"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+</LinearLayout>

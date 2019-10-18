@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#FFF"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <TextView
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:height="50dp"
+        android:gravity="center"
+        android:text="push"
+        android:id="@+id/push_button"
+        android:background="@drawable/common_circle_layout_green"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:height="50dp"
+        android:gravity="center"
+        android:text="pop"
+        android:id="@+id/pop_button"
+        android:background="@drawable/common_circle_layout_green"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:height="50dp"
+        android:gravity="center"
+        android:text="replace"
+        android:id="@+id/replace_button"
+        android:background="@drawable/common_circle_layout_green"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:height="50dp"
+        android:gravity="center"
+        android:text="popToRoot"
+        android:id="@+id/popToRoot_button"
+        android:background="@drawable/common_circle_layout_green"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:height="50dp"
+        android:gravity="center"
+        android:text="popTo"
+        android:id="@+id/popTo_button"
+        android:background="@drawable/common_circle_layout_green"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:height="50dp"
+        android:gravity="center"
+        android:text="switchTab"
+        android:id="@+id/switchTab_button"
+        android:background="@drawable/common_circle_layout_green"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

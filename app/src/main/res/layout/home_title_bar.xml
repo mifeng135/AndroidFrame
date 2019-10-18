@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.mifeng.mf.MFTitleBar.Widget.MFTitleBar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/titlebar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    titlebar:rightType="imageButton"
+    titlebar:centerSearchEditable="false"
+    titlebar:centerType="searchView"
+    titlebar:fillStatusBar="true"
+    titlebar:leftDrawablePadding="0dp"
+    titlebar:centerSearchRightType="delete"
+    titlebar:centerSearchBg="@drawable/title_search_back"
+    titlebar:statusBarColor="#7EA854"
+    titlebar:statusBarMode="dark"
+    titlebar:titleBarColor="#7EA854" />

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#EEE"
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/common_circle_5_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/tx_1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="10dp"
+            android:gravity="center_vertical"
+            android:text="综合排序" />
+
+
+        <View
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#999"/>
+
+        <TextView
+            android:id="@+id/tx_2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="10dp"
+            android:gravity="center_vertical"
+            android:text="销量高到低" />
+
+        <View
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#999"/>
+
+        <TextView
+            android:id="@+id/tx_3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="10dp"
+            android:gravity="center_vertical"
+            android:text="售价高到低" />
+
+        <View
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#999"/>
+
+
+        <TextView
+            android:id="@+id/tx_4"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="10dp"
+            android:gravity="center_vertical"
+            android:text="售价低到高" />
+    </LinearLayout>
+
+</LinearLayout>
