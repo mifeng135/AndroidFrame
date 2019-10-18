@@ -120,7 +120,10 @@ public class Navigator extends ParentController {
     }
 
     public void replace(final String id, final ViewController viewController) {
-        applyOnStack(id, (stack) -> stack.replace(viewController));
+        ViewController target = findController(id);
+        if (target != null) {
+            applyOnStack(id, (stack) -> stack.replace(target,viewController));
+        }
     }
     public void pop(String id) {
         applyOnStack(id, (stack) -> stack.pop( true));

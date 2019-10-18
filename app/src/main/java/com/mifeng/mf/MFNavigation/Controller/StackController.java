@@ -194,21 +194,11 @@ public class StackController extends ParentController<StackLayout> {
         pop(true);
     }
 
-    public void replace(ViewController child) {
-        if (!canPop()) {
-            return;
-        }
-        animator.cancelPushAnimations();
-        Iterator<String> iterator = stack.iterator();
-        iterator.next();
-
-
-        if (stack.size() > 1) {
-            ViewController controller = stack.get(iterator.next());
-            stack.remove(iterator, controller.getId());
-            controller.destroy();
-        }
-        push(child);
+    public void replace(ViewController target,ViewController child) {
+        push(child,()-> {
+            stack.remove(target.getId());
+            target.destroy();
+        });
     }
 
     public void switchTab(int index) {
