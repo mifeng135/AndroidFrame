@@ -15,6 +15,7 @@ import com.mifeng.mf.Constant.MFBeanFactory;
 import com.mifeng.mf.Constant.MFMsgFactory;
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.ConnectionPool;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
@@ -52,6 +53,7 @@ public class MFNetWorkLogic {
                 .connectTimeout(netTime, TimeUnit.SECONDS)
                 .readTimeout(netTime, TimeUnit.SECONDS)
                 .writeTimeout(netTime, TimeUnit.SECONDS)
+                .connectionPool(new ConnectionPool())
                 .addInterceptor(new MFHttpInterceptor())
                 .build();
     }
