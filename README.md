@@ -29,8 +29,8 @@
  2. popViewAnimator
 ### Examples
 ```
-	pushViewAnimator = ViewAnimator.animate(view).alpha(0, 1).startDelay(400).duration(450).toViewAnimator();
-	popViewAnimator = ViewAnimator.animate(view).alpha(1, 0).duration(400).toViewAnimator();
+pushViewAnimator = ViewAnimator.animate(view).alpha(0, 1).startDelay(400).duration(450).toViewAnimator();
+popViewAnimator = ViewAnimator.animate(view).alpha(1, 0).duration(400).toViewAnimator();
 ```	
 
 
@@ -40,7 +40,7 @@
 public class SampleClass extends UIViewController<MFSwipeBackLayout> implements ChildViewController
 ```
 
-#sample ViewController
+# sample ViewController
 ```
 public class SampleViewController extends UIViewController<MFSwipeBackLayout> implements ChildViewController{
 
@@ -55,7 +55,7 @@ public class SampleViewController extends UIViewController<MFSwipeBackLayout> im
         view = createSwipeBackLayout();
         LinearLayout linearLayout = createLinearLayout();
         MFTitleBar mfTitleBar = createNormalTitleBar(inflater);
-        mfTitleBar.setMFCenterText("例子界面");
+        mfTitleBar.setMFCenterText("sampleView");
         mfTitleBar.setListener(new MFTitleBar.OnTitleBarListener() {
             @Override
             public void onClicked(View v, int action, String extra) {
@@ -97,24 +97,24 @@ public class SampleViewController extends UIViewController<MFSwipeBackLayout> im
 # http request
 
 ```
-	1. at MFMsgUrl file
-		public static final String CATALOG_HOME_TOP_STORE_DATA = "/test/test/store-data";
-	2. at MFMsgDefine file 
-		public static final String MSG_SEND_CATALOG_HOME_TOP_STORE_INFO                         = "1001";
-		public static final String MSG_RECV_CATALOG_HOME_TOP_STORE_INFO                         = "2001";
-	3. at MFMsgFactory file 
-		mMsgSendFactory.put(MFMsgDefine.MSG_SEND_CATALOG_HOME_TOP_STORE_INFO, MFMsgUrl.CATALOG_HOME_TOP_STORE_DATA);
-		mMsgRecvFactory.put(MFMsgUrl.CATALOG_HOME_TOP_STORE_DATA, MFMsgDefine.MSG_RECV_CATALOG_HOME_TOP_STORE_INFO);
-	4. at MFBeanFactory file
-		mBeanFactory.put(MFMsgDefine.MSG_RECV_CATALOG_HOME_TOP_STORE_INFO, TestBean.class);
-	5. logic file will hava method 
-		@Subscribe(threadMode = ThreadMode.MAIN)
-		public void onRecvMsg(MFPostEvent messageEvent) {
-			String eventCmd = messageEvent.getEventCmd();
-			if (eventCmd == MFMsgDefine.MSG_RECV_CATALOG_HOME_TOP_STORE_INFO) {
-				TestBean testBean = (TestBean) messageEvent.getData();
-			}
+1. at MFMsgUrl file
+	public static final String CATALOG_HOME_TOP_STORE_DATA = "/test/test/store-data";
+2. at MFMsgDefine file 
+	public static final String MSG_SEND_CATALOG_HOME_TOP_STORE_INFO                         = "1001";
+	public static final String MSG_RECV_CATALOG_HOME_TOP_STORE_INFO                         = "2001";
+3. at MFMsgFactory file 
+	mMsgSendFactory.put(MFMsgDefine.MSG_SEND_CATALOG_HOME_TOP_STORE_INFO, MFMsgUrl.CATALOG_HOME_TOP_STORE_DATA);
+	mMsgRecvFactory.put(MFMsgUrl.CATALOG_HOME_TOP_STORE_DATA, MFMsgDefine.MSG_RECV_CATALOG_HOME_TOP_STORE_INFO);
+4. at MFBeanFactory file
+	mBeanFactory.put(MFMsgDefine.MSG_RECV_CATALOG_HOME_TOP_STORE_INFO, TestBean.class);
+5. logic file will hava method 
+	@Subscribe(threadMode = ThreadMode.MAIN)
+	public void onRecvMsg(MFPostEvent messageEvent) {
+		String eventCmd = messageEvent.getEventCmd();
+		if (eventCmd == MFMsgDefine.MSG_RECV_CATALOG_HOME_TOP_STORE_INFO) {
+			TestBean testBean = (TestBean) messageEvent.getData();
 		}
+	}
 ```
 # support simple mvc mode
 
