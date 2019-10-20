@@ -1,6 +1,6 @@
 
 
-# [中文文档](https://github.com/mifeng135/AndroidFrame/blob/master/README-zh.md)
+
 
 # navigator 
 
@@ -120,6 +120,9 @@ public class SampleViewController extends UIViewController<MFSwipeBackLayout> im
 
 # dome
 [download dome.apk](https://github.com/mifeng135/AndroidFrame/blob/master/debug.apk)
+
+# [中文文档](https://github.com/mifeng135/AndroidFrame/blob/master/README-zh.md)
+
 
 <div><img width="450" height="750" src="https://github.com/mifeng135/AndroidFrame/blob/master/image/1.png"/></div>
 <div><img width="450" height="750" src="https://github.com/mifeng135/AndroidFrame/blob/master/image/4.png"/></div>
