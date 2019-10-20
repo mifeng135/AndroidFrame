@@ -15,7 +15,7 @@ eventbus 事件驱动，逻辑和界面完全分离 结构更清晰
 
 支持界面侧滑返回
 
-# dome(https://github.com/mifeng135/AndroidFrame/blob/master/debug.apk)
+[dome](https://github.com/mifeng135/AndroidFrame/blob/master/debug.apk)
 
 
 
