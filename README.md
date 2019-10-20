@@ -33,7 +33,7 @@ popViewAnimator = ViewAnimator.animate(view).alpha(1, 0).duration(400).toViewAni
 public class SampleClass extends UIViewController<MFSwipeBackLayout> implements ChildViewController
 ```
 
-# mvp
+# 支持简单的mvp模式
 
 [dome](https://github.com/mifeng135/AndroidFrame/blob/master/debug.apk)
 
