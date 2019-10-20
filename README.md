@@ -15,3 +15,6 @@ eventbus 事件驱动，逻辑和界面完全分离 结构更清晰
 
 支持界面侧滑返回
 
+
+<div align=center><img width="150" height="150" src="https://github.com/HeTingwei/ReadmeLearn/blob/master/avatar1.jpg"/></div>
+
