@@ -5,5 +5,5 @@ package com.mifeng.mf.Constant;
  */
 
 public class MFAppConfig {
-    public static final String httpUrl = "";//your self server ip
+    public static final String httpUrl = "http://192.168.1.217:8281";//your self server ip
 }

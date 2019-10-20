@@ -62,7 +62,7 @@ public class MFNetWorkLogic {
      * cancel request
      * @param cmd recv cmd
      */
-    public void clearRequestWithCmd(String cmd) {
+    public void cancalRequestWithCmd(String cmd) {
         List<Call> callList = mOkHttpClient.dispatcher().queuedCalls();
         for (int i = 0; i < callList.size(); i++) {
             Call call = callList.get(i);
