@@ -1,21 +1,24 @@
 
-抛弃了fragment的使用，界面以view为基础进行
-
-界面的操作是对view的pop push 等操作
-
-导航支持 push pop popToRoot popTo switchTab 等操作
+导航支持 push pop popToRoot popTo switchTab replace操作
 
 支持界面节点出现时候的动画，您可以指定每个view节点 出现的动画方式。
 
-网络使用okhttp 支持多个并发请求
-
-eventbus 事件驱动，逻辑和界面完全分离 结构更清晰
 
 界面的生命周期  onViewDidLoad onViewAppeared onViewDisappear onViewDidUnload 
 
 支持界面侧滑返回
 
-[dome](https://github.com/mifeng135/AndroidFrame/blob/master/debug.apk)
+mvp 架构
+
+[# dome](https://github.com/mifeng135/AndroidFrame/blob/master/debug.apk)
+
+<div><img width="150" height="150" src="https://github.com/mifeng135/AndroidFrame/blob/master/image/1.png"/></div>
+<div><img width="150" height="150" src="https://github.com/mifeng135/AndroidFrame/blob/master/image/2.png"/></div>
+<div><img width="150" height="150" src="https://github.com/mifeng135/AndroidFrame/blob/master/image/3.png"/></div>
+<div><img width="150" height="150" src="https://github.com/mifeng135/AndroidFrame/blob/master/image/4.png"/></div>
+<div><img width="150" height="150" src="https://github.com/mifeng135/AndroidFrame/blob/master/image/5.png"/></div>
+
+
 
 
 
