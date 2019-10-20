@@ -10,7 +10,12 @@
 |switchTab|跳转到指定tabBar 页面，并关闭其他所有非 tabBar 页面|
 |replace|关闭当前页面，跳转到应用内的某个页面。|
 
-# 支持界面节点出现时候的动画，您可以指定每个view节点 出现的动画方式。
+# 可以指定每个view节点 出现的动画方式
+## 你可以编写类似的代码，可以指定将要出现或者消失的界面透明方式
+```
+pushViewAnimator = ViewAnimator.animate(mfTitleBar).alpha(0, 1).startDelay(400).duration(450).toViewAnimator();
+popViewAnimator = ViewAnimator.animate(view).alpha(1, 0).duration(400).toViewAnimator();
+```
 
 # 界面的生命周期
 
@@ -22,12 +27,10 @@
 |onViewDidUnload|界面销毁完成，只调用一次|
 
 
-
 # 支持界面侧滑返回
-
-//代码块
-int a=0;
-a++;
+## 指定MFSwipeBackLayout
+```
+public class SampleClass extends UIViewController<MFSwipeBackLayout> implements ChildViewController
 ```
 
 # mvp
