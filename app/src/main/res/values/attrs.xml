@@ -38,11 +38,13 @@
             <enum name="textView" value="1" />
             <enum name="imageButton" value="2" />
             <enum name="customView" value="3" />
+            <enum name="twoImageButton" value="4" />
         </attr>
         <attr name="rightText" format="string" />
         <attr name="rightTextColor" format="color" />
         <attr name="rightTextSize" format="dimension" />
         <attr name="rightImageResource" format="reference" />
+        <attr name="rightSecondImageResource" format="reference" />
         <attr name="rightCustomView" format="reference" />
 
         <attr name="centerType">

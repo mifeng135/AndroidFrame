@@ -31,6 +31,7 @@ import android.widget.TextView;
 import com.mifeng.mf.MFTitleBar.Statusbar.StatusBarUtils;
 import com.mifeng.mf.MFTitleBar.Utils.ScreenUtils;
 import com.mifeng.mf.R;
+
 import q.rorbin.badgeview.QBadgeView;
 
 import static android.widget.ImageView.ScaleType.CENTER_INSIDE;
@@ -47,7 +48,8 @@ public class MFTitleBar extends RelativeLayout implements View.OnClickListener {
     private ImageView btnLeft;                        // 左边ImageButton
     private View viewCustomLeft;
     private TextView tvRight;                           // 右边TextView
-    private ImageButton btnRight;                       // 右边ImageButton
+    private ImageView btnRight;                       // 右边ImageButton
+    private ImageView btnRightSecond;                   //
     private View viewCustomRight;
     private LinearLayout llMainCenter;
     private TextView tvCenter;                          // 标题栏文字
@@ -83,6 +85,7 @@ public class MFTitleBar extends RelativeLayout implements View.OnClickListener {
     private int rightTextColor;                         // 右边TextView颜色
     private float rightTextSize;                        // 右边TextView文字大小
     private int rightImageResource;                     // 右边图片资源
+    private int rightSecondImageResource;
     private int rightCustomViewRes;                     // 右边自定义视图布局资源
 
     private int centerType;                             // 中间视图类型
@@ -109,10 +112,13 @@ public class MFTitleBar extends RelativeLayout implements View.OnClickListener {
     private static final int TYPE_LEFT_TEXTVIEW = 1;
     private static final int TYPE_LEFT_IMAGEBUTTON = 2;
     private static final int TYPE_LEFT_CUSTOM_VIEW = 3;
+
     private static final int TYPE_RIGHT_NONE = 0;
     private static final int TYPE_RIGHT_TEXTVIEW = 1;
     private static final int TYPE_RIGHT_IMAGEBUTTON = 2;
     private static final int TYPE_RIGHT_CUSTOM_VIEW = 3;
+    private static final int TYPE_RIGHT_TWO_IMAGEBUTTON = 4;
+
     private static final int TYPE_CENTER_NONE = 0;
     private static final int TYPE_CENTER_TEXTVIEW = 1;
     private static final int TYPE_CENTER_SEARCHVIEW = 2;
@@ -170,6 +176,9 @@ public class MFTitleBar extends RelativeLayout implements View.OnClickListener {
             rightTextSize = array.getDimension(R.styleable.MFTitleBar_rightTextSize, ScreenUtils.dp2PxInt(context, 16));
         } else if (rightType == TYPE_RIGHT_IMAGEBUTTON) {
             rightImageResource = array.getResourceId(R.styleable.MFTitleBar_rightImageResource, 0);
+        } else if (rightType == TYPE_RIGHT_TWO_IMAGEBUTTON) {
+            rightImageResource = array.getResourceId(R.styleable.MFTitleBar_rightImageResource, 0);
+            rightSecondImageResource = array.getResourceId(R.styleable.MFTitleBar_rightSecondImageResource, 0);
         } else if (rightType == TYPE_RIGHT_CUSTOM_VIEW) {
             rightCustomViewRes = array.getResourceId(R.styleable.MFTitleBar_rightCustomView, 0);
         }
@@ -287,11 +296,11 @@ public class MFTitleBar extends RelativeLayout implements View.OnClickListener {
             btnLeft.setScaleType(CENTER_INSIDE);
             btnLeft.setPadding(10, 10, 10, 10);
             btnLeft.setOnClickListener(this);
-            LayoutParams layoutParams = new LayoutParams(ScreenUtils.dp2PxInt(getContext(), 30 ), ScreenUtils.dp2PxInt(getContext(), 30));
+            LayoutParams layoutParams = new LayoutParams(ScreenUtils.dp2PxInt(getContext(), 30), ScreenUtils.dp2PxInt(getContext(), 30));
             layoutParams.leftMargin = ScreenUtils.dp2PxInt(getContext(), 10);
             layoutParams.addRule(RelativeLayout.ALIGN_PARENT_START);
             layoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
-            rlMain.addView(btnLeft,layoutParams);
+            rlMain.addView(btnLeft, layoutParams);
         } else if (leftType == TYPE_LEFT_CUSTOM_VIEW) {
             viewCustomLeft = LayoutInflater.from(context).inflate(leftCustomViewRes, rlMain, false);
             if (viewCustomLeft.getId() == View.NO_ID) {
@@ -308,9 +317,10 @@ public class MFTitleBar extends RelativeLayout implements View.OnClickListener {
      * @param context 上下文
      */
     private void initMainRightViews(Context context) {
-        LayoutParams rightInnerParams = new LayoutParams(WRAP_CONTENT, MATCH_PARENT);
+        LayoutParams rightInnerParams = new LayoutParams(ScreenUtils.dp2PxInt(getContext(), 30), ScreenUtils.dp2PxInt(getContext(), 30));
         rightInnerParams.addRule(RelativeLayout.ALIGN_PARENT_END);
         rightInnerParams.addRule(RelativeLayout.CENTER_VERTICAL);
+        rightInnerParams.rightMargin = ScreenUtils.dp2PxInt(getContext(), 10);
 
         if (rightType == TYPE_RIGHT_TEXTVIEW) {
             tvRight = new TextView(context);
@@ -324,7 +334,7 @@ public class MFTitleBar extends RelativeLayout implements View.OnClickListener {
             tvRight.setOnClickListener(this);
             rlMain.addView(tvRight, rightInnerParams);
         } else if (rightType == TYPE_RIGHT_IMAGEBUTTON) {
-            btnRight = new ImageButton(context);
+            btnRight = new ImageView(context);
             btnRight.setId(StatusBarUtils.generateViewId());
             btnRight.setImageResource(rightImageResource);
             btnRight.setBackgroundColor(Color.TRANSPARENT);
@@ -332,6 +342,31 @@ public class MFTitleBar extends RelativeLayout implements View.OnClickListener {
             btnRight.setPadding(0, 0, 0, 0);
             btnRight.setOnClickListener(this);
             rlMain.addView(btnRight, rightInnerParams);
+        } else if (rightType == TYPE_RIGHT_TWO_IMAGEBUTTON) {
+            btnRight = new ImageView(context);
+            btnRight.setId(StatusBarUtils.generateViewId());
+            btnRight.setImageResource(rightImageResource);
+            btnRight.setBackgroundColor(Color.TRANSPARENT);
+            btnRight.setScaleType(CENTER_INSIDE);
+            btnRight.setPadding(0, 0, 0, 0);
+            btnRight.setOnClickListener(this);
+            rlMain.addView(btnRight, rightInnerParams);
+
+
+            LayoutParams rightSecondLayoutParams = new LayoutParams(ScreenUtils.dp2PxInt(getContext(), 30), ScreenUtils.dp2PxInt(getContext(), 30));
+            rightSecondLayoutParams.addRule(RelativeLayout.LEFT_OF, btnRight.getId());
+            rightSecondLayoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
+            rightSecondLayoutParams.rightMargin = ScreenUtils.dp2PxInt(getContext(), 10);
+
+            btnRightSecond = new ImageView(context);
+            btnRightSecond.setId(StatusBarUtils.generateViewId());
+            btnRightSecond.setImageResource(rightSecondImageResource);
+            btnRightSecond.setBackgroundColor(Color.TRANSPARENT);
+            btnRightSecond.setScaleType(CENTER_INSIDE);
+            btnRightSecond.setPadding(0, 0, 0, 0);
+
+            btnRightSecond.setOnClickListener(this);
+            rlMain.addView(btnRightSecond, rightSecondLayoutParams);
         } else if (rightType == TYPE_RIGHT_CUSTOM_VIEW) {
             viewCustomRight = LayoutInflater.from(context).inflate(rightCustomViewRes, rlMain, false);
             if (viewCustomRight.getId() == View.NO_ID) {
@@ -600,6 +635,8 @@ public class MFTitleBar extends RelativeLayout implements View.OnClickListener {
             listener.onClicked(v, ACTION_RIGHT_TEXT, null);
         } else if (v.equals(btnRight)) {
             listener.onClicked(v, ACTION_RIGHT_BUTTON, null);
+        } else if (v.equals(btnRightSecond)) {
+            listener.onClicked(v, ACTION_RIGHT_SECOND_BUTTON, null);
         } else if (v.equals(etSearchHint) || v.equals(ivSearch)) {
             listener.onClicked(v, ACTION_SEARCH, null);
         } else if (v.equals(ivVoice)) {
@@ -658,7 +695,7 @@ public class MFTitleBar extends RelativeLayout implements View.OnClickListener {
         return tvRight;
     }
 
-    public ImageButton getRightImageButton() {
+    public ImageView getRightImageButton() {
         return btnRight;
     }
 
@@ -781,6 +818,7 @@ public class MFTitleBar extends RelativeLayout implements View.OnClickListener {
     public static final int ACTION_SEARCH_VOICE = 7;     // 语音按钮被点击
     public static final int ACTION_SEARCH_DELETE = 8;    // 搜索删除按钮被点击
     public static final int ACTION_CENTER_TEXT = 9;     // 中间文字点击
+    public static final int ACTION_RIGHT_SECOND_BUTTON = 10; //右侧第二个按钮点击
 
 
     public interface OnTitleBarListener {
@@ -811,7 +849,7 @@ public class MFTitleBar extends RelativeLayout implements View.OnClickListener {
         return this;
     }
 
-    public MFTitleBar setMFMainAlpha(@FloatRange(from=0.0, to=1.0) float alpha) {
+    public MFTitleBar setMFMainAlpha(@FloatRange(from = 0.0, to = 1.0) float alpha) {
         rlMain.setAlpha(alpha);
         return this;
     }
@@ -822,6 +860,7 @@ public class MFTitleBar extends RelativeLayout implements View.OnClickListener {
         }
         return this;
     }
+
     public MFTitleBar setMFLeftText(String leftText) {
         if (tvLeft != null) {
             tvLeft.setText(leftText);
@@ -913,7 +952,6 @@ public class MFTitleBar extends RelativeLayout implements View.OnClickListener {
         }
         return this;
     }
-
 
 
     public MFTitleBar setRightIcon(Drawable rightIcon, int width, int height) {

@@ -35,7 +35,7 @@ public class Navigator extends ParentController {
 
     public Navigator(final Activity activity, ChildControllersRegistry childRegistry, RootPresenter rootPresenter) {
         super(activity, "navigator" + CompatUtils.generateViewId(), childRegistry);
-        rootLayout = new CoordinatorLayout(getActivity());
+        rootLayout = new CoordinatorLayout(activity);
         this.rootPresenter = rootPresenter;
         mInstance = this;
     }

@@ -17,6 +17,7 @@ import com.mifeng.mf.ControllerLogic.MineViewControllerLogic;
 import com.mifeng.mf.MFNavigation.Controller.UIViewController;
 import com.mifeng.mf.MFNavigation.Controller.TabViewController;
 import com.mifeng.mf.MFNavigation.Navigator.Navigator;
+import com.mifeng.mf.MFTitleBar.Widget.MFTitleBar;
 import com.mifeng.mf.R;
 import com.mifeng.mf.UIViewController.LoginViewController;
 
@@ -35,12 +36,17 @@ public class MineViewController extends UIViewController<LinearLayout> implement
     protected LinearLayout createView() {
         LayoutInflater inflater = LayoutInflater.from(getActivity());
         view = createLinearLayout();
+        MFTitleBar titleBar = createTitleBar(inflater);
         View baseView = inflater.inflate(R.layout.mine_layout,view,false);
+        view.addView(titleBar);
         view.addView(baseView);
         initVIiewTouch(baseView);
         return view;
     }
 
+    private MFTitleBar createTitleBar(LayoutInflater inflater) {
+        return (MFTitleBar) inflater.inflate(R.layout.common_title_second_right_bar, view, false);
+    }
     private void initVIiewTouch(View baseView) {
         TextView login = baseView.findViewById(R.id.mine_push_login);
         login.setOnClickListener(new View.OnClickListener() {

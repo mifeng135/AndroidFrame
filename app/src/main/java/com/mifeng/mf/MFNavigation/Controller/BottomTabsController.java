@@ -154,7 +154,7 @@ public class BottomTabsController extends ParentController<BottomTabsLayout> imp
         tabsAttacher.onTabSelected(tabs.get(newIndex));
         getCurrentView().setVisibility(View.INVISIBLE);
         if (getCurrentView().getChildAt(0) != null) {
-            getCurrentView().getChildAt(0).setVisibility(View.INVISIBLE);
+            getCurrentView().getChildAt(0).setVisibility(View.GONE);
         }
         bottomTabs.setCurrentItem(newIndex, false);
         getCurrentView().setVisibility(View.VISIBLE);
