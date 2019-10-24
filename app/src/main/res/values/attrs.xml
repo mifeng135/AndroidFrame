@@ -101,4 +101,10 @@
             <enum name="vertical" value="1" />
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="MFExpandableLayout">
+        <attr name="el_headerLayout" format="reference"/>
+        <attr name="el_contentLayout" format="reference" />
+        <attr name="el_duration" format="integer" />
+    </declare-styleable>
 </resources>

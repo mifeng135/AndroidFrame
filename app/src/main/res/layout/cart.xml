@@ -5,9 +5,9 @@
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:text="购物车"
-        android:id="@+id/cart"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <com.mifeng.mf.Component.MFExpandableListView.ExpandableLayoutListView
+        android:scrollbars="none"
+        android:id="@+id/listview"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"/>
 </LinearLayout>
